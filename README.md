@@ -23,7 +23,7 @@
   <a href="https://github.com/solamarpreet/dockersh">
     <img src="images/shell.png" alt="Logo" width="100" height="100">
   </a>
-<h2 align="center">DockerSh</h2>
+<h2 align="center">Dockersh</h2>
 
   <p align="center">
     <i>A shell for Docker commands with autocompletion and history</i>
@@ -58,24 +58,17 @@
 
 ### Prerequisites
 
-The following external dependencies need to be satisfied in order to run DockerSh.
+The following external dependencies need to be satisfied in order to run Dockersh.
 * Python 3.8 +
 <br />
 
 ### Installation via PyPI for non-rootless Docker
 
-1. Install pipx to safely run DockerSh from anywhere in the terminal
+1. Pull Dockersh from PyPI
    ```sh
-   sudo pip install pipx
+   sudo pip install dockersh
    ```
-   ```sh
-   sudo pipx ensurepath
-   ```
-2. Pull DockerSh from PyPI
-   ```sh
-   sudo pipx install dockersh
-   ```
-3. Start DockerSh
+2. Start Dockersh
    ```sh
    sudo dockersh
    ```
@@ -84,18 +77,11 @@ The following external dependencies need to be satisfied in order to run DockerS
 
 ### Installation via PyPI for rootless Docker
 
-1. Install pipx to safely run DockerSh from anywhere in the terminal
+1. Pull Dockersh from PyPI
    ```sh
-   python3 -m pip install --user pipx
+   python3 -m pip install dockersh
    ```
-   ```sh
-   python3 -m pipx ensurepath
-   ```
-2. Pull DockerSh from PyPI
-   ```sh
-   pipx install dockersh
-   ```
-3. Start DockerSh
+3. Start Dockersh
    ```sh
    dockersh
    ```
@@ -112,20 +98,21 @@ The following external dependencies need to be satisfied in order to run DockerS
    ```sh
    python3 -m pip install -r requirements.txt
    ```
-3. Start DockerSh
+3. Start Dockersh
    ```sh
-   sudo python3 dockersh.py
+   python3 dockersh/main.py
    ```
-    > or if Docker is configured to work in rootless mode
+    > or if Docker is not configured to work in rootless mode
     >
     >```terminal
-    >python3 dockersh.py
+    >sudo python3 -m pip install -r requirements.txt
+    >sudo python3 dockersh/main.py
     >```
 <br />
 
 ## Usage
 
-Within DockerSh you dont need to prepend docker to any command. Simply type your command of choice like
+Within Dockersh you dont need to prepend docker to any command. Simply type your command of choice like
    ```terminal
    docker > ps
    ```
@@ -136,7 +123,7 @@ Within DockerSh you dont need to prepend docker to any command. Simply type your
 <!-- TROUBLESHOOTING -->
 ## Troubleshooting
 
-DockerSh will fail to start if sudo is not supplied and your Docker Engine isn't configured to run in rootless mode. In that case you can start dockersh with sudo or configure Docker to run in rootless mode as specified [here](https://docs.docker.com/engine/security/rootless/).
+Dockersh will fail to start if sudo is not supplied and your Docker Engine isn't configured to run in rootless mode. In that case you can start dockersh with sudo or configure Docker to run in rootless mode as specified [here](https://docs.docker.com/engine/security/rootless/).
 
 In case of any other problem check the [open issues](https://github.com/solamarpreet/dockersh/issues) for a list known issues and open a new issue.
 

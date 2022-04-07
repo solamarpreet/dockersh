@@ -25,6 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
             'dockersh=dockersh.main:cli',
+            'dockershell=dockersh.main:cli',
         ],
     },
     install_requires=requirements,
