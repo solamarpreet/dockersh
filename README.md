@@ -64,11 +64,15 @@ The following external dependencies need to be satisfied in order to run Dockers
 
 ### Installation via PyPI for non-rootless Docker
 
-1. Pull Dockersh from PyPI
+1. Install pipx
    ```sh
-   sudo pip install dockersh
+   sudo apt install python3-pip pipx
    ```
-2. Start Dockersh
+2. Install dockersh from PyPI
+   ```sh
+   sudo PIPX_HOME=/opt/pipx PIPX_BIN_DIR=/usr/local/bin pipx install dockersh
+   ```
+3. Start dockersh
    ```sh
    sudo dockersh
    ```
@@ -77,38 +81,24 @@ The following external dependencies need to be satisfied in order to run Dockers
 
 ### Installation via PyPI for rootless Docker
 
-1. Pull Dockersh from PyPI
+1. Install pipx
    ```sh
-   python3 -m pip install dockersh
+   sudo apt install python3-pip pipx
    ```
-3. Start Dockersh
+   ```sh
+   python3 -m pipx ensurepath
+   ```
+2. Pull dockersh from PyPI
+   ```sh
+   python3 -m pipx install dockersh
+   ```
+2. Start dockersh
    ```sh
    dockersh
    ```
 
 <br />
 
-### Installation via GitHub
-
-1. Clone the repo and cd into the folder
-   ```sh
-   git clone https://github.com/solamarpreet/dockersh.git && cd dockersh
-   ```
-2. Install requirements
-   ```sh
-   python3 -m pip install -r requirements.txt
-   ```
-3. Start Dockersh
-   ```sh
-   python3 dockersh/main.py
-   ```
-    > or if Docker is not configured to work in rootless mode
-    >
-    >```terminal
-    >sudo python3 -m pip install -r requirements.txt
-    >sudo python3 dockersh/main.py
-    >```
-<br />
 
 ## Usage
 
