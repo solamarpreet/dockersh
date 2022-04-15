@@ -11,12 +11,9 @@ class DockershellCompleter(Completer):
     def calculate_completions(self, line, is_word_before):
         current_tokens = line.split()
         word_before_cursor = ''
-        key_tokens = []
         if not is_word_before:
             word_before_cursor = current_tokens.pop(-1)
-        for i in current_tokens:
-            if not i[0] == '-':
-                key_tokens.append(i)
+        key_tokens = [token for token in current_tokens if token[0]!= '-']
         try:
             x = reduce(operator.getitem, key_tokens, self.current_dict)
             return x.keys(), word_before_cursor
